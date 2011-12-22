@@ -91,3 +91,53 @@ snippet get
 # Get Element
 snippet gett
 	getElementBy${1:Id}('${2}')${3}
+#
+# Node.js
+#
+snippet req
+	require('${1}')${2}
+# open and close
+snippet {
+	{
+	  ${2}
+	}${1:;}
+snippet :
+	${1:key}: ${2:value},
+	${3}
+# BDD
+snippet des
+	describe('${1:test name}', function(){
+		${2}
+	});
+snippet bef
+	before(function(${1:done}){
+		${2}
+	});
+snippet aft
+	after(function(${1:done}){
+		${2}
+	});
+snippet it
+	it('${1}', function(${2:done}){
+		${3}
+	});
+snippet its
+	it('should ${1}', function(${2:done}){
+		${3}
+	});
+# BDD should
+snippet se
+	should.exist(${1});
+	${2}
+snippet sne
+	should.not.exist(${1:err});
+	${2}
+snippet shp
+	${1}.should.have.property('${2:_id}');
+	${3}
+snippet seq
+	${1}.should.equal(${2});
+	${3}
+snippet seql
+	${1}.should.eql(${2});
+	${3}
