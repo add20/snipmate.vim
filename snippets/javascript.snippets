@@ -1,7 +1,6 @@
 # Prototype
 snippet proto
-	${1:class_name}.prototype.${2:method_name} =
-	function(${3:first_argument}) {
+	${1:class_name}.prototype.${2:method_name} = function(${3:first_argument}) {
 		${4:// body...}
 	};
 # Function
@@ -94,13 +93,23 @@ snippet gett
 #
 # Node.js
 #
-snippet req
-	require('${1}')${2}
 # open and close
 snippet {
 	{
 	  ${2}
 	}${1:;}
+snippet req
+	require('${1}')${2}
+snippet exp
+	exports.${1} = function(${2}){
+		${3}
+	};
+snippet ifee
+	if (${1:err}) {
+		${2:callback}($1);
+	} else {
+		$2(${3:null, }${4});
+	}
 snippet :
 	${1:key}: ${2:value},
 	${3}
@@ -127,7 +136,7 @@ snippet its
 	});
 # BDD should
 snippet se
-	should.exist(${1});
+	should.exist(${1:err});
 	${2}
 snippet sne
 	should.not.exist(${1:err});
@@ -140,4 +149,7 @@ snippet seq
 	${3}
 snippet seql
 	${1}.should.eql(${2});
+	${3}
+snippet si
+	${1}.should.instanceof(${2});
 	${3}

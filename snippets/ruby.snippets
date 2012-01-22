@@ -375,7 +375,11 @@ snippet seld
 snippet lam
 	lambda { |${1:args}| ${2} }
 snippet do
-	do |${1:variable}|
+	do
+		${1}
+	end
+snippet doo
+	do |${1}|
 		${2}
 	end
 snippet :
@@ -501,4 +505,36 @@ snippet tas
 	desc "${1:Task description\}"
 	task :${2:task_name => [:dependent, :tasks]} do
 		${3}
+	end
+
+#
+# BDD
+#
+snippet des
+	describe "${1}" do
+		${2}
+	end
+snippet desc
+	describe ${1:Class} "${2}" do
+		${3}
+	end
+snippet descs
+	description ${1:Class} "should ${2}" do
+		${3}
+	end
+snippet bef
+	before do
+		${1}
+	end
+snippet aft
+	after do
+		${1}
+	end
+snippet it
+	it "${1}" do
+		${2}
+	end
+snippet its
+	it "should ${1}" do
+		${2}
 	end
